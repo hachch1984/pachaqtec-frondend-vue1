@@ -3,6 +3,7 @@ body {
   box-sizing: border-box;
   font-size: 15px;
 }
+
 $principal-color: #ff5252;
 
 @mixin mixin-border-1 {
@@ -14,11 +15,18 @@ $principal-color: #ff5252;
 @mixin mixin-text-shadow {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-@mixin mixin-text-style-1($sise) {
+@mixin mixin-border-shadow {
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@mixin mixin-text-style-1($sise: 1rem, $color: white) {
   font-style: normal;
   font-weight: bold;
   font-size: $sise;
+  letter-spacing: 2px;
+  color: $color;
 }
+/****************************************************************************************************/
 .header {
   height: 150px;
   background-color: $principal-color;
@@ -29,33 +37,67 @@ $principal-color: #ff5252;
   .header-title {
     @include mixin-text-style-1(2rem);
     @include mixin-text-shadow();
-    color: white;
+    cursor: pointer;
+    &:hover {
+      color: lightgray;
+    }
+  }
+  .header-menu {
+    display: flex;
+    li {
+      cursor: pointer;
+      margin: 0 20px;
+      @include mixin-text-style-1(1rem);
+      @include mixin-text-shadow();
+      &:hover {
+        color: lightgray;
+      }
+    }
   }
   .header-creator {
-    @include mixin-border-1();
-   
+    display: flex;
+    flex-direction: column;
     span {
-      @include mixin-text-style-1(1rem);
+      @include mixin-text-style-1(0.7);
       @include mixin-text-shadow();
     }
     a {
-      @include mixin-text-style-1(0.7rem);
+      @include mixin-text-style-1(0.5rem);
       @include mixin-text-shadow();
-    display: inline-flexbox;
-    margin-left: 5px;
+      margin-top: 10px;
+      &:hover {
+        color: lightgray;
+      }
     }
   }
 }
+/****************************************************************************************************/
 
 .button1 {
-  padding: 0.5rem;
-  background-color: orange;
-  color: white;
-
-  border: solid 1px white;
-  border-radius: 10px;
-  cursor: pointer;
+  padding: 20px;
+  background-color: $principal-color;
+  @include mixin-text-style-1();
+  @include mixin-text-shadow();
+  @include mixin-border-shadow();
 }
+.button2 {
+  padding: 10px 20px;
+  background-color: $principal-color;
+  @include mixin-text-style-1(0.6rem);
+  @include mixin-text-shadow();
+  @include mixin-border-shadow();
+  font-weight: 100;
+}
+.button3 {
+  padding: 10px 20px;
+  background-color: lightgray;
+  @include mixin-text-style-1(0.6rem, black);
+  @include mixin-text-shadow();
+  @include mixin-border-shadow();
+  font-weight: 100;
+}
+
+/****************************************************************************************************/
 
 .center-elements {
   display: flex;
@@ -63,6 +105,7 @@ $principal-color: #ff5252;
   align-items: center;
   height: 100px;
 }
+/****************************************************************************************************/
 
 .modal {
   background: rgba(23, 24, 23, 0.3);
@@ -78,19 +121,69 @@ $principal-color: #ff5252;
 
   .modal-form {
     background-color: white;
-    padding: 2rem;
-    border: solid 1px black;
-    div {
-      margin-bottom: 1rem;
+    padding: 10px;
+    border: solid 1px gray;
+
+    .modal-form-title {
+      @include mixin-text-style-1(1rem, black);
+      @include mixin-text-shadow();
+      padding-bottom: 10px;
+      border-bottom: 1px solid lightgray;
+      margin-bottom: 10px;
     }
-    label {
-      display: inline-block;
-      width: 100px;
+
+    .modal-form-body {
+      display: flex;
+      flex-direction: column;
     }
   }
   .modal-form-footer {
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    button {
+      margin: 0 10px;
+    }
   }
+}
+
+/****************************************************************************************************/
+.card {
+  width: 300px;
+  height: 370px;
+  border: solid 1px lightgray;  
+  display: flex;
+  flex-direction: column;
+   justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  iframe {
+    widows: 300px;
+    height: 150px;
+  }
+  .card-title {
+    padding: 10px;
+    @include mixin-text-style-1(1rem, black);    
+  }
+  .card-description {
+    padding: 10px;
+    color: gray;
+    line-height: 1.3rem;
+  }
+  .card-button {
+      background-color: #00c1aa;
+      padding: 10px 90px;     
+      @include mixin-text-style-1(0.6rem, white);
+      @include mixin-text-shadow();
+      @include mixin-border-shadow();
+      font-weight: 100;
+      margin-bottom: 10px;
+  }
+}
+
+.card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+   
 }

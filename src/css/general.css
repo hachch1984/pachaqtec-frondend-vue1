@@ -5,6 +5,7 @@ body {
   font-size: 15px;
 }
 
+/****************************************************************************************************/
 .header {
   height: 150px;
   background-color: #ff5252;
@@ -24,41 +25,116 @@ body {
   font-style: normal;
   font-weight: bold;
   font-size: 2rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  letter-spacing: 2px;
   color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.header .header-title:hover {
+  color: lightgray;
+}
+
+.header .header-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .header-menu li {
+  cursor: pointer;
+  margin: 0 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header .header-menu li:hover {
+  color: lightgray;
 }
 
 .header .header-creator {
-  border: solid 1px white;
-  color: white;
-  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .header .header-creator span {
   font-style: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.7;
+  letter-spacing: 2px;
+  color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .header .header-creator a {
   font-style: normal;
   font-weight: bold;
-  font-size: 0.7rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  display: inline-flexbox;
-  margin-left: 5px;
-}
-
-.button1 {
-  padding: 0.5rem;
-  background-color: orange;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
   color: white;
-  border: solid 1px white;
-  border-radius: 10px;
-  cursor: pointer;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
 }
 
+.header .header-creator a:hover {
+  color: lightgray;
+}
+
+/****************************************************************************************************/
+.button1 {
+  padding: 20px;
+  background-color: #ff5252;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button2 {
+  padding: 10px 20px;
+  background-color: #ff5252;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 100;
+}
+
+.button3 {
+  padding: 10px 20px;
+  background-color: lightgray;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 100;
+}
+
+/****************************************************************************************************/
 .center-elements {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -72,6 +148,7 @@ body {
   height: 100px;
 }
 
+/****************************************************************************************************/
 .modal {
   background: rgba(23, 24, 23, 0.3);
   width: 100vw;
@@ -93,26 +170,111 @@ body {
 
 .modal .modal-form {
   background-color: white;
-  padding: 2rem;
-  border: solid 1px black;
+  padding: 10px;
+  border: solid 1px gray;
 }
 
-.modal .modal-form div {
-  margin-bottom: 1rem;
+.modal .modal-form .modal-form-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
 }
 
-.modal .modal-form label {
-  display: inline-block;
-  width: 100px;
-}
-
-.modal .modal-form-footer {
-  margin-top: 50px;
+.modal .modal-form .modal-form-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal .modal-form-footer {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal .modal-form-footer button {
+  margin: 0 10px;
+}
+
+/****************************************************************************************************/
+.card {
+  width: 300px;
+  height: 370px;
+  border: solid 1px lightgray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+}
+
+.card iframe {
+  widows: 300px;
+  height: 150px;
+}
+
+.card .card-title {
+  padding: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: black;
+}
+
+.card .card-description {
+  padding: 10px;
+  color: gray;
+  line-height: 1.3rem;
+}
+
+.card .card-button {
+  background-color: #00c1aa;
+  padding: 10px 90px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=general.css.map */

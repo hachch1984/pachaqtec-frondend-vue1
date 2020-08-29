@@ -1,6 +1,11 @@
 <template>
   <div class="header">
-    <p class="header-title">VIDEO LIBRARY</p>
+    <p class="header-title"  @click="bnMain_click">VIDEO LIBRARY</p>
+    <ul class="header-menu">
+      
+      <li @click="bnVideo_click" >Agregar Video</li>
+      <li  @click="bnMapa_click" >Ver Mapa</li>
+    </ul>
     <div class="header-creator">
       <span>Henry Chavez</span>
       <a
@@ -25,5 +30,19 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  props: ["video", "mapa", "main"],
+
+  methods: {
+      bnMain_click() {
+      this.$emit("main");
+    },
+    bnVideo_click() {
+      this.$emit("video");
+    },
+    bnMapa_click() {
+      this.$emit("mapa");
+    },
+  },
+});
 </script>
