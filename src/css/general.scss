@@ -3,33 +3,46 @@ body {
   box-sizing: border-box;
   font-size: 15px;
 }
+$principal-color: #ff5252;
 
-@mixin mixin-border1pxwhitePadding1remColorwhite {
+@mixin mixin-border-1 {
   border: solid 1px white;
   color: white;
   padding: 1rem;
 }
 
+@mixin mixin-text-shadow {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@mixin mixin-text-style-1($sise) {
+  font-style: normal;
+  font-weight: bold;
+  font-size: $sise;
+}
 .header {
   height: 150px;
-  background-color: orange;
+  background-color: $principal-color;
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
   align-items: center;
-  p {
-    @include mixin-border1pxwhitePadding1remColorwhite();
-    font-size: 2rem;
+  .header-title {
+    @include mixin-text-style-1(2rem);
+    @include mixin-text-shadow();
+    color: white;
   }
-  div {
-    @include mixin-border1pxwhitePadding1remColorwhite();
-    display: flex;
-    flex-direction: column;
+  .header-creator {
+    @include mixin-border-1();
+   
     span {
-      font-size: 1.5rem;
+      @include mixin-text-style-1(1rem);
+      @include mixin-text-shadow();
     }
     a {
-      margin-top: 0.3rem;
+      @include mixin-text-style-1(0.7rem);
+      @include mixin-text-shadow();
+    display: inline-flexbox;
+    margin-left: 5px;
     }
   }
 }

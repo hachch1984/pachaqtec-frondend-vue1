@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <p class="header-p1">VIDEO LIBRARY</p>
-    <div>
+    <p class="header-title">VIDEO LIBRARY</p>
+    <div class="header-creator">
       <span>Henry Chavez</span>
       <a
         href="https://github.com/hachch1984/pachaqtec-frondend-vue1/blob/master/index.html"
